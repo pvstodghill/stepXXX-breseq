@@ -33,7 +33,7 @@ function setup_variables {
     if [ -z "$USE_NATIVE" ] ; then
 	# use docker
 	[ "$HOWTO" ] || HOWTO="./scripts/howto -f packages.yaml -m $ROOT_DIR"
-	[ "$THREADS" ] || THREADS=$(./scripts/howto -f packages.yaml -q -c fastqc nproc)
+	[ "$THREADS" ] || THREADS=$(./scripts/howto -f packages.yaml -q -c breseq nproc)
     else
 	# go native
 	HOWTO=
