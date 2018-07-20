@@ -32,7 +32,7 @@ function setup_variables {
     [ "$ROOT_DIR" ] || ROOT_DIR=$(./scripts/find-closest-ancester-dir $THIS_DIR $FASTQ $REPLICONS)
     if [ -z "$USE_NATIVE" ] ; then
 	# use docker
-	[ "$HOWTO" ] || HOWTO="./scripts/howto -f scripts/howto.yaml -m $ROOT_DIR"
+	[ "$HOWTO" ] || HOWTO="./scripts/howto -f packages.yaml -m $ROOT_DIR"
 	[ "$THREADS" ] || THREADS=$(./scripts/howto -q -c fastqc nproc)
     else
 	# go native
